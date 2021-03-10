@@ -1,1 +1,43 @@
-<p>login works!</p>
+<mat-card class="example-card"> 
+    <div class="logo">
+        Atenea
+    </div>
+    <mat-card-content>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <mat-form-field class="input-full-width" appearance="outline">
+                <mat-label>Usuario</mat-label>
+                <input matInput type="text" name="struser" #struser="ngModel" [(ngModel)]="user.struser" autocomplete="off" required>
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error *ngIf="!struser.valid && struser.touched">
+                    Este campo es <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="input-full-width" appearance="outline">
+                <mat-label>Contrase&ntilde;a</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" name="password"  #password="ngModel" [(ngModel)]="user.strpassword" required>
+                <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="!password.valid && password.touched">
+                    La contrase&ntilde;a no es v&aacute;lida.
+                </mat-error>
+            </mat-form-field>        
+            <!--div class="text-buttons">
+                <div class="right forgot-pass">Olvidaste tu contrase&ntilde;a?</div>
+            </div-->
+            <div class="display-center">
+                <button mat-raised-button class="btn-login" type="submit" [ngClass]="loginForm.invalid ? 'btnDisabled' : ''" [disabled]="loginForm.invalid">Iniciar sesi&oacute;n</button>
+            </div>
+        </form>     
+
+    </mat-card-content>
+    <mat-card-actions class="example-spinner">
+        <div [hidden]="spinner">
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+        <div [hidden]="error" class="error-message">
+            {{ message }}
+        </div>
+    </mat-card-actions>
+</mat-card>
+

@@ -1,0 +1,69 @@
+.example-card {
+    width: 27%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+  }
+
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.input-full-width {
+    width: 100%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.forgot-pass {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.text-buttons {
+    margin-bottom: 30px;
+}
+
+.display-center {
+    margin-bottom: 20px;
+}
+
+.btn-login {
+    width: 100%;
+    color: white;
+    background-color: rgb(28, 174, 157);
+}
+
+.btn-google {
+    width: 100%;
+}
+
+.btn-register {
+    color: rgb(28, 174, 157);
+}
+
+.img-google {
+   cursor: pointer;
+   height: 40px;
+}
+
+.sign-up {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Border */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgb(28, 174, 157) !important;
+  }
